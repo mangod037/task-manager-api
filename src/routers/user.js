@@ -164,7 +164,7 @@ router.get("/users/:id/avatar", async (req, res) => {
       throw new Error();
     }
 
-    res.set("Content-Type", "image/png");
+    res.set("Content-Type", "image/png"); // default: res.set("Content-Type", "application/json")
     res.send(user.avatar);
   } catch (e) {
     res.status(404).send();
